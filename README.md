@@ -24,7 +24,7 @@ cd bin
 cd windows
 kafka-server-start.bat ..\..\config\server.properties # Started kafka-server
 ```
-Open new cmd in the same folder for creating Kafka-topic
+Open new cmd in the same folder for creating kafka-topic
 ```console
 cd bin
 cd windows
