@@ -2,15 +2,15 @@
 
 This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live. 
 
-Follow the below mentioned steps for setting up and running the Kafka POC app locally:
+## Follow the below mentioned steps for setting up and running the Kafka POC app locally.
 
-## 1. Downloading and Setting Up kafka 
+### 1. Downloading and Setting Up kafka 
 
 - Visit the Apache kafka website and download the latest Kafka binary.
 - Extract the downloaded Kafka package to your preferred directory.
 - Apache kafka website: https://kafka.apache.org/downloads
 
-## 2. Start Zookeeper and kafka
+### 2. Start Zookeeper and kafka
 
 Go inside kafka folder (C:\kafka_2.12-3.6.1) and open cmd and paste the following commands:
 ```console
@@ -32,13 +32,13 @@ kafka-topics.bat --create --topic logs --bootstrap-server localhost:9092 --repli
 ```
 **Do not stop the above services unless you no longer want to use the app.**
 
-## 3. Clone the repository
+### 3. Clone the repository
 
 ```console
 git clone https://github.com/Dhruvrajsinh21/Kafka_POC.git
 ```
 
-## 4. Create Virtual environment and install requirements.txt
+### 4. Create Virtual environment and install requirements.txt
 
 ```console
 python -m venv venv
@@ -46,18 +46,18 @@ source venv/bin/activate # On Windows use 'venv\Scripts\activate'
 pip install -r requirements.txt
 ```
 
-## 5. Run the producer
+### 5. Run the producer
 
 ```console
 python producer.py
 ```
 
-## 6. Run the streamlit consumer app.py
+### 6. Run the streamlit consumer app.py
 
 ```console
 streamlit run app.py
 ```
-## Photos of results
+### Photos of results
 
 ![image](https://github.com/user-attachments/assets/03664912-8a1b-48ee-8772-0e313b8d9cf6)
 # Producer
