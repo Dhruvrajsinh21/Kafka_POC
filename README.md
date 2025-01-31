@@ -2,7 +2,7 @@
 
 This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live. 
 
-## Follow the below mentioned steps for setting up and running the Kafka POC app locally.
+## Follow the below mentioned steps for setting up and running the Kafka POC app locally:
 
 ### 1. Downloading and Setting Up kafka 
 
