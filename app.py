@@ -24,16 +24,6 @@ def filter_logs(log, selected_level):
         return True
     return log['level'] == selected_level
 
-def export_logs(log_list):
-    with open("logs.txt", "w") as file:
-        for log in log_list:
-            file.write(log + "\n")
-    st.success("Logs exported to logs.txt")
-
-export_button = st.button("Export Logs to File")
-if export_button:
-    export_logs(log_list)
-
 try:
     while True:
         msg = consumer.poll(1.0)
