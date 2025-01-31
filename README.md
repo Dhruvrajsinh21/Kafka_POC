@@ -16,8 +16,8 @@ cd bin
 cd windows
 zookeeper-server-start.bat ..\..\config\zookeeper.properties  ## Start Zookeeper
 ```
+Open new cmd for starting kafka-server
 ```console
-#open new cmd for starting kafka-server
 cd bin
 cd windows
 kafka-server-start.bat ..\..\config\server.properties
