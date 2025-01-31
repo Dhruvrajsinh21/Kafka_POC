@@ -1,14 +1,14 @@
-# Kafka POC
+# kafka POC
 
-This is a Proof of Concept (POC) for integrating Apache Kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live.
+This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live.
 
-## 1. Downloading and Setting Up Kafka
+## 1. Downloading and Setting Up kafka
 
-- Visit the Apache Kafka website and download the latest Kafka binary.
+- Visit the Apache kafka website and download the latest Kafka binary.
 - Extract the downloaded Kafka package to your preferred directory.
-- Apache Kafka website: https://kafka.apache.org/downloads
+- Apache kafka website: https://kafka.apache.org/downloads
 
-## 2. Start Zookeeper and Kafka
+## 2. Start Zookeeper and kafka
 
 Go inside kafka file (C:\kafka_2.12-3.6.1) and open cmd and paste the following commands:
 ```console
@@ -20,7 +20,7 @@ Open new cmd of same path for starting kafka-server
 ```console
 cd bin
 cd windows
-kafka-server-start.bat ..\..\config\server.properties # Started Kafka-server
+kafka-server-start.bat ..\..\config\server.properties # Started kafka-server
 ```
 Open new cmd of same path for creating Kafka-topic
 ```console
