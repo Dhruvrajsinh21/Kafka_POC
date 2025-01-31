@@ -1,8 +1,10 @@
 # kafka POC
 
-This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live.
+This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to demonstrate real-time data streaming. In this setup, I created a producer that generates logs, and through the Streamlit consumer app, we can monitor the logs live. 
 
-## 1. Downloading and Setting Up kafka
+## Below are the steps for setting up and running the Kafka POC app locally.
+
+## 1. Downloading and Setting Up kafka 
 
 - Visit the Apache kafka website and download the latest Kafka binary.
 - Extract the downloaded Kafka package to your preferred directory.
@@ -28,7 +30,7 @@ cd bin
 cd windows
 kafka-topics.bat --create --topic logs --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 # Created topic named logs
 ```
-#### Do not stop these services until you're ready to stop them.
+**Do not stop the above services unless you no longer want to use the app.**
 
 ## 3. Clone the repository
 
