@@ -58,11 +58,11 @@ python producer.py
 streamlit run app.py
 ```
 
-# Streamlit app
+## Streamlit app
 ![image](https://github.com/user-attachments/assets/7dc0cdca-f18e-4f22-9063-83c5fad8e7da)
-# Producer
+## Producer
 ![image](https://github.com/user-attachments/assets/4f1311a3-54dd-4b34-9ad8-7ecbb9443835)
-# Consumer
+## Consumer
 ![image](https://github.com/user-attachments/assets/50b0eebb-d552-4600-ada1-63a1771d5431)
 
 
