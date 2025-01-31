@@ -10,7 +10,7 @@ This is a Proof of Concept (POC) for integrating Apache Kafka with Streamlit to 
 
 ## 2. Start Zookeeper and Kafka
 
-Go inside kafka file and open cmd and paste the following commands:
+Go inside kafka file(C:\kafka_2.12-3.6.1) and open cmd and paste the following commands:
 ```console
 cd bin
 cd windows
@@ -22,4 +22,7 @@ cd bin
 cd windows
 kafka-server-start.bat ..\..\config\server.properties
 ```
-## 3. Create a Virtual Environment
+## 3. Clone the repository
+
+```console
+git clone
