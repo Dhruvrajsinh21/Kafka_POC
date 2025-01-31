@@ -61,10 +61,8 @@ streamlit run app.py
 
 ![image](https://github.com/user-attachments/assets/03664912-8a1b-48ee-8772-0e313b8d9cf6)
 # Producer
-![image](https://github.com/user-attachments/assets/6b00f42b-b39f-46ac-a8f3-4b7d4ef506f5)
+![image](https://github.com/user-attachments/assets/4f1311a3-54dd-4b34-9ad8-7ecbb9443835)
 # Consumer
-![image](https://github.com/user-attachments/assets/9fff8a93-f8d1-4610-92fa-7aa8c44ca98d)
-# Applying Filter
-![image](https://github.com/user-attachments/assets/aa7b8b13-ce18-4cb4-a741-f890b6285872)
+![image](https://github.com/user-attachments/assets/50b0eebb-d552-4600-ada1-63a1771d5431)
 
 
