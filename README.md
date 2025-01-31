@@ -2,7 +2,7 @@
 
 This is a Proof of Concept (POC) for integrating Apache Kafka with Streamlit to demonstrate real-time data streaming and here I created a producer which produces logs and through streamlit consumer app we can monitor the logs live.
 
-## 1.Downloading and Setting Up Kafka
+## 1. Downloading and Setting Up Kafka
 
 - Visit the Apache Kafka website and download the latest Kafka binary.
 - Extract the downloaded Kafka package to your preferred directory.
