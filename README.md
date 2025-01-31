@@ -28,7 +28,7 @@ cd bin
 cd windows
 kafka-topics.bat --create --topic logs --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 # Created topic named logs
 ```
-# Do not stop these services until you're ready to stop them.
+#### Do not stop these services until you're ready to stop them.
 
 ## 3. Clone the repository
 
