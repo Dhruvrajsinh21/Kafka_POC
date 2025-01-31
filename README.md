@@ -10,25 +10,25 @@ This is a Proof of Concept (POC) for integrating Apache kafka with Streamlit to 
 
 ## 2. Start Zookeeper and kafka
 
-Go inside kafka file (C:\kafka_2.12-3.6.1) and open cmd and paste the following commands:
+Go inside kafka folder (C:\kafka_2.12-3.6.1) and open cmd and paste the following commands:
 ```console
 cd bin
 cd windows
 zookeeper-server-start.bat ..\..\config\zookeeper.properties  # Started Zookeeper
 ```
-Open new cmd of same path for starting kafka-server
+Open new cmd in the same folder for starting kafka-server
 ```console
 cd bin
 cd windows
 kafka-server-start.bat ..\..\config\server.properties # Started kafka-server
 ```
-Open new cmd of same path for creating Kafka-topic
+Open new cmd in the same folder for creating Kafka-topic
 ```console
 cd bin
 cd windows
 kafka-topics.bat --create --topic logs --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 # Created topic named logs
 ```
-Don't stop until you want to stop the service
+# Do not stop these services until you're ready to stop them.
 
 ## 3. Clone the repository
 
