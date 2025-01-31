@@ -57,9 +57,9 @@ python producer.py
 ```console
 streamlit run app.py
 ```
-### Photos of results
 
-![image](https://github.com/user-attachments/assets/03664912-8a1b-48ee-8772-0e313b8d9cf6)
+# Streamlit app
+![image](https://github.com/user-attachments/assets/7dc0cdca-f18e-4f22-9063-83c5fad8e7da)
 # Producer
 ![image](https://github.com/user-attachments/assets/4f1311a3-54dd-4b34-9ad8-7ecbb9443835)
 # Consumer
