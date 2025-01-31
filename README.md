@@ -25,4 +25,5 @@ kafka-server-start.bat ..\..\config\server.properties
 ## 3. Clone the repository
 
 ```console
-git clone
+[git clone](https://github.com/Dhruvrajsinh21/Kafka_POC.git)
+```
