@@ -10,7 +10,7 @@ In this multiple_producer branch, I have added multiple producers and consumers 
 
 2. Create two kakfa topics named nginxlogs and logs for mysql using command given in readme of master branch.
 
-3. And then run the commands; streamlit run app.py and producer.py.
+3. And then run the streamlit app and producer.
 
 ## Photos:
 ![image](https://github.com/user-attachments/assets/b18730e0-f358-4037-92e6-5803440c89b8)
