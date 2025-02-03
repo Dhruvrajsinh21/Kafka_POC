@@ -5,8 +5,8 @@
 2. Create two kakfa topics named nginxlogs and logs for mysql using command given in readme of master branch.
    
 3. In this multiple_producer branch, I have added multiple producers and consumers communicating via Kafka for different topics, including:
-   - nginxlogs
-   - logs (for mysql)
+- nginxlogs
+- logs (for mysql)
 
 ## Photos:
 ![image](https://github.com/user-attachments/assets/b18730e0-f358-4037-92e6-5803440c89b8)
