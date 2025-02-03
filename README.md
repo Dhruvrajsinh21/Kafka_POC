@@ -2,8 +2,10 @@
 
 1. Follow the steps provided in the master branch to set up and run the Kafka POC locally.
 
-2. In this multiple_producer branch, I have added multiple producers and consumers communicating via Kafka for different topics, including:
-- nginx_logs
+2. Create two kakfa topics named nginxlogs and logs for mysql using command given in readme of master branch.
+   
+3. In this multiple_producer branch, I have added multiple producers and consumers communicating via Kafka for different topics, including:
+- nginxlogs
 - logs (for mysql)
 
 ## Photos:
