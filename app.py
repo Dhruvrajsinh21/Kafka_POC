@@ -1,44 +1,42 @@
-import streamlit as st
-from confluent_kafka import Consumer, KafkaException
+from confluent_kafka import Producer
 import json
+import os
+import time
+import random
+from PIL import Image
 
-st.set_page_config(page_title="Kafka Log Viewer", layout="wide")
-st.title("📜 Real-time Kafka Log Viewer")
+conf = {'bootstrap.servers': 'localhost:9092'}
+producer = Producer(conf)
 
-conf = {
-    'bootstrap.servers': 'localhost:9092',
-    'group.id': 'log-consumer-group',
-    'auto.offset.reset': 'earliest'
-}
-consumer = Consumer(conf)
-consumer.subscribe(["logs"])
+IMAGE_DIR = "images/"
+THUMBNAIL_DIR = "thumbnails/"
 
-log_levels = ["ALL", "INFO", "WARNING", "ERROR", "DEBUG"]
-selected_level = st.selectbox("Select log level", log_levels)
+os.makedirs(THUMBNAIL_DIR, exist_ok=True)
 
-log_list = []
-log_area = st.empty()
+def create_thumbnail(image_path):
+    img = Image.open(image_path)
+    img.thumbnail((100, 100))
+    base_name = os.path.basename(image_path)
+    thumb_name = f"thumb_{base_name}"
+    thumb_path = os.path.join(THUMBNAIL_DIR, thumb_name)
+    img.save(thumb_path)
+    return thumb_path
 
-def filter_logs(log, selected_level):
-    if selected_level == "ALL":
-        return True
-    return log['level'] == selected_level
+def send_image_data():
+    for image_file in os.listdir(IMAGE_DIR):
+        if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
+            original_path = os.path.join(IMAGE_DIR, image_file)
+            thumb_path = create_thumbnail(original_path)
 
-try:
-    while True:
-        msg = consumer.poll(1.0)
-        if msg is None:
-            continue
-        if msg.error():
-            raise KafkaException(msg.error())
+            # Kafka Message
+            image_data = {
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "original_image": original_path,
+                "thumbnail_image": thumb_path
+            }
+            producer.produce("image_topic", key="image-log", value=json.dumps(image_data))
+            producer.flush()
+            print(f"Sent Image Data: {image_data}")
 
-        log = json.loads(msg.value().decode('utf-8'))
-        if filter_logs(log, selected_level):
-            log_entry = f"[{log['timestamp']}] **{log['level']}** - {log['message']} (Source: {log['source']})"
-            log_list.insert(0, log_entry)
-            log_area.text("\n".join(log_list[:20]))
-            
-except KeyboardInterrupt:
-    st.write("Stopped.")
-finally:
-    consumer.close()
+if __name__ == "__main__":
+    send_image_data()
