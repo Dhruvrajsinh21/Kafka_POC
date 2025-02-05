@@ -2,8 +2,6 @@
 
 In this branch, I have demonstrated an image upload, processing, and thumbnail generation system using kafka.
 
-## Overview
-
 - **Producer (kafka)**: 
   - Created a producer that sends image metadata (path and name) to a Kafka topic for processing.
   
@@ -20,12 +18,11 @@ In this branch, I have demonstrated an image upload, processing, and thumbnail g
 1. **Kafka Setup**: 
    - Ensure Kafka is running on `localhost:9092`.
 
-2. **Start Consumer**: 
-   - Run the consumer to listen for image processing requests:
+2. **Start Consumer**:  
    ```bash
-   python consumer.py
+   python consumers.py
    ```
-3. **Start Streamlit app**:
+4. **Start Streamlit app**:
    ```bash
    streamlit run app.py
    ```
