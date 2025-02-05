@@ -1,42 +1,34 @@
 from confluent_kafka import Producer
 import json
 import os
-import time
-import random
-from PIL import Image
 
-conf = {'bootstrap.servers': 'localhost:9092'}
+KAFKA_BROKER = "localhost:9092"
+TOPIC_NAME = "logs"
+
+UPLOAD_FOLDER = "uploads/"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+conf = {'bootstrap.servers': KAFKA_BROKER}
 producer = Producer(conf)
 
-IMAGE_DIR = "images/"
-THUMBNAIL_DIR = "thumbnails/"
+def delivery_report(err, msg):
+    if err is not None:
+        print(f"Message delivery failed: {err}")
+    else:
+        print(f"Message delivered to {msg.topic()} [{msg.partition()}]")
 
-os.makedirs(THUMBNAIL_DIR, exist_ok=True)
+def send_image_to_kafka(image_path):
+    if not os.path.exists(image_path):
+        print(f"Error: {image_path} does not exist.")
+        return
 
-def create_thumbnail(image_path):
-    img = Image.open(image_path)
-    img.thumbnail((100, 100))
-    base_name = os.path.basename(image_path)
-    thumb_name = f"thumb_{base_name}"
-    thumb_path = os.path.join(THUMBNAIL_DIR, thumb_name)
-    img.save(thumb_path)
-    return thumb_path
+    image_name = os.path.basename(image_path)
+    message = json.dumps({
+        "image_path": image_path,
+        "image_name": image_name
+    })
 
-def send_image_data():
-    for image_file in os.listdir(IMAGE_DIR):
-        if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
-            original_path = os.path.join(IMAGE_DIR, image_file)
-            thumb_path = create_thumbnail(original_path)
+    producer.produce(TOPIC_NAME, value=message, callback=delivery_report)
+    producer.flush()
 
-            # Kafka Message
-            image_data = {
-                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-                "original_image": original_path,
-                "thumbnail_image": thumb_path
-            }
-            producer.produce("image_topic", key="image-log", value=json.dumps(image_data))
-            producer.flush()
-            print(f"Sent Image Data: {image_data}")
-
-if __name__ == "__main__":
-    send_image_data()
+    print(f"Sent image {image_name} to Kafka.")
