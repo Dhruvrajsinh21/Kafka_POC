@@ -26,4 +26,5 @@ In this branch, I have demonstrated an image upload, processing, and thumbnail g
    ```bash
    streamlit run app.py
    ```
+![image](https://github.com/user-attachments/assets/796a1968-e6be-4189-85fc-3222e2440631)
 
